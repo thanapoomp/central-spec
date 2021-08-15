@@ -12,6 +12,7 @@ import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 import "../../index.css";
+import LoginDialog from "../modules/_auth/components/LoginDialog";
 function Layout(props) {
   const authReducer = useSelector(({ auth }) => auth);
   const layoutReducer = useSelector(({ layout }) => layout);
@@ -19,13 +20,11 @@ function Layout(props) {
   const theme = createTheme({
     palette: {
       type: layoutReducer.darkMode ? "dark" : "light",
-      
     },
     typography: {
       fontFamily: ["Sarabun", "sans-serif"].join(","),
     },
   });
-
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -66,27 +65,25 @@ function Layout(props) {
     );
   }
 
-  
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <CssBaseline />
-        {authReducer.user && (
-          <React.Fragment>
-            <TitleAppBar></TitleAppBar>
-            <DrawerMenu></DrawerMenu>
-          </React.Fragment>
-        )}
+        {/* {authReducer.user && ( */}
+        <React.Fragment>
+          <TitleAppBar></TitleAppBar>
+          <DrawerMenu></DrawerMenu>
+        </React.Fragment>
+        {/* )} */}
 
         <Toolbar id="back-to-top-anchor" />
-        <Container maxWidth="lg">
-            {props.children}
-        </Container>
+        <Container maxWidth="lg">{props.children}</Container>
         <ScrollTop {...props}>
           <Fab color="secondary" size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>
+        <LoginDialog></LoginDialog>
       </React.Fragment>
     </ThemeProvider>
   );

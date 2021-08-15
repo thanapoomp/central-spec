@@ -35,87 +35,88 @@ export default function ASideMenuList() {
 
       <MenuItem iconName="home" text="Home" path="/"></MenuItem>
 
-      {/* Demo */}
-      <ParentsMenu iconName="star" text="Demo">
-        <MenuItem
-          iconName="star"
-          text="OnlyAdmin"
-          path="/onlyAdmin"
-          roles={[ROLES.admin]}
-        ></MenuItem>
-        <MenuItem iconName="star" text="Alert" path="/demo/alert"></MenuItem>
-        <MenuItem
-          iconName="integration_instructions"
-          text="Form Components"
-          path="/demo/formDemo"
-        ></MenuItem>
-        <MenuItem
-          iconName="view_list"
-          text="Data Table"
-          path="/demo/datatableList"
-        ></MenuItem>
-        <MenuItem
-          iconName="storage"
-          text="Redux Basic"
-          path="/demo/reduxDemo"
-        ></MenuItem>
-        <MenuItem
-          iconName="tab"
-          text="Tab Basic"
-          path="/demo/tabBasic"
-        ></MenuItem>
-        <MenuItem
-          iconName="inventory"
-          text="CRUD Product"
-          path="/demo/crud-product"
-        ></MenuItem>
+      <React.Fragment>
+        {/* Demo */}
+        {/* <ParentsMenu iconName="star" text="Demo">
+          <MenuItem
+            iconName="star"
+            text="OnlyAdmin"
+            path="/onlyAdmin"
+            roles={[ROLES.admin]}
+          ></MenuItem>
+          <MenuItem iconName="star" text="Alert" path="/demo/alert"></MenuItem>
+          <MenuItem
+            iconName="integration_instructions"
+            text="Form Components"
+            path="/demo/formDemo"
+          ></MenuItem>
+          <MenuItem
+            iconName="view_list"
+            text="Data Table"
+            path="/demo/datatableList"
+          ></MenuItem>
+          <MenuItem
+            iconName="storage"
+            text="Redux Basic"
+            path="/demo/reduxDemo"
+          ></MenuItem>
+          <MenuItem
+            iconName="tab"
+            text="Tab Basic"
+            path="/demo/tabBasic"
+          ></MenuItem>
+          <MenuItem
+            iconName="inventory"
+            text="CRUD Product"
+            path="/demo/crud-product"
+          ></MenuItem> */}
         {/* Start QR - BarCode */}
-        <ParentsMenu iconName="qr_code" text="QR-BarCode">
-          <MenuItem
-            iconName="horizontal_split"
-            text="Barcode Generate"
-            path="/demo/BarcodeGenerateDemo"
-          ></MenuItem>
-          <MenuItem
-            iconName="qr_code_2"
-            text="QR Generate"
-            path="/demo/QRGenerateDemo"
-          ></MenuItem>
-          <MenuItem
-            iconName="qr_code_scanner"
-            text="QR Reader"
-            path="/demo/QRReaderDemo"
-          ></MenuItem>
-        </ParentsMenu>
+        {/* <ParentsMenu iconName="qr_code" text="QR-BarCode">
+            <MenuItem
+              iconName="horizontal_split"
+              text="Barcode Generate"
+              path="/demo/BarcodeGenerateDemo"
+            ></MenuItem>
+            <MenuItem
+              iconName="qr_code_2"
+              text="QR Generate"
+              path="/demo/QRGenerateDemo"
+            ></MenuItem>
+            <MenuItem
+              iconName="qr_code_scanner"
+              text="QR Reader"
+              path="/demo/QRReaderDemo"
+            ></MenuItem>
+          </ParentsMenu> */}
         {/* End QR - Barcode */}
 
         {/* Start Reporting */}
-        <ParentsMenu iconName="summarize" text="Reporting">
-          <MenuItem
-            iconName="picture_as_pdf"
-            text="Pdf Generate"
-            path="/demo/pdfGenerrate"
-          ></MenuItem>
-          <MenuItem
-            iconName="assessment"
-            text="Chart Basic"
-            path="/demo/apexcharts"
-          ></MenuItem>
-          <MenuItem
-            iconName="add_chart"
-            text="Chart DrillDown"
-            path="/demo/chartDrillDown"
-          ></MenuItem>
-          <MenuItem
-            iconName="local_printshop"
-            text="Print Component"
-            path="/demo/PrintComponent"
-          ></MenuItem>
-        </ParentsMenu>
+        {/* <ParentsMenu iconName="summarize" text="Reporting">
+            <MenuItem
+              iconName="picture_as_pdf"
+              text="Pdf Generate"
+              path="/demo/pdfGenerrate"
+            ></MenuItem>
+            <MenuItem
+              iconName="assessment"
+              text="Chart Basic"
+              path="/demo/apexcharts"
+            ></MenuItem>
+            <MenuItem
+              iconName="add_chart"
+              text="Chart DrillDown"
+              path="/demo/chartDrillDown"
+            ></MenuItem>
+            <MenuItem
+              iconName="local_printshop"
+              text="Print Component"
+              path="/demo/PrintComponent"
+            ></MenuItem>
+          </ParentsMenu> */}
         {/* End Reporting */}
-
-      </ParentsMenu>
-      {/* End demo */}
+        {/* </ParentsMenu> */}
+        {/* End demo */}
+      </React.Fragment>
     </List>
   );
 }

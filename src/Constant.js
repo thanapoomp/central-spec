@@ -1,9 +1,9 @@
 export const APP_INFO = {
-  name: "New Standard",
-  version: "0.3.0",
-  since: "2020",
-  description: "Siam smile",
-  contactUrl: "https://www.siamsmile.co.th",
+  name: "Central Spec",
+  version: "0.0.1",
+  since: "2021",
+  description: "Kunlanis",
+  contactUrl: "http://www.kunlanis.com",
 };
 
 export const VERSION_CHECKER = {
@@ -15,22 +15,16 @@ export const VERSION_CHECKER = {
       : "https://api.thanapoom.cc/api/ClientVersion/GetLastClientVersion", // Production
 };
 
+//update token in 10 - 30 minutes (random to avoid multipages call api in the same time )
+export const RENEW_TOKEN_MS = {
+  min: 600000,
+  max: 1800000,
+};
+
 export const API_URL =
   !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-    ? "https://api.thanapoom.cc/api" //dev
-    : "https://api.thanapoom.cc/api"; // Production
-
-export const SSO_URL =
-  !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-    ? // ? "https://auth.thanapoom.cc" //dev
-      "https://login.devsiamsmile.com" //dev
-    : "https://login.devsiamsmile.com"; // Production
-
-export const SSO_URL_Changepassword =
-  !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-    ? // ? "https://auth.thanapoom.cc/#/logout" //dev
-      "https://login.devsiamsmile.com//#/changepassword" //dev
-    : "https://login.devsiamsmile.com//#/changepassword"; // Production
+    ? "http://localhost:5000/api" //dev
+    : "http://localhost:5000/api"; // Production
 
 export const ROLES = {
   user: "User",

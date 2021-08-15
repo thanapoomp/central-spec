@@ -4,7 +4,6 @@ import { ContentRoute } from "./ContentRoute";
 import PrivateRoute from "./PrivateRoute";
 import { ROLES } from "../../Constant";
 import OnlyAdmin from "../pages/OnlyAdmin";
-import Login from "../modules/_auth/pages/Login";
 import ErrorUnAuthorized from "../pages/ErrorUnAuthorized";
 import Home from "../pages/Home";
 import AlertDemo from "../modules/_demo/pages/AlertDemo";
@@ -37,14 +36,15 @@ import DatatableListDemo from "../modules/_demo/pages/DatatableListDemo";
 import TabBasic from "../modules/_demo/pages/TabBasic";
 import ReduxDemo from "../modules/_demo/pages/ReduxDemo";
 import Product from "../modules/_crudDemo/pages/Product";
+import TokenHandler from "../modules/_auth/components/TokenHandler";
 
 export default function BasePage(props) {
   return (
     <React.Fragment>
+      <TokenHandler></TokenHandler>
       <Switch>
         {<Redirect exact from="/" to="/home" />}
 
-        <ContentRoute exact title="login" path="/login" component={Login} />
         <ContentRoute exact title="home" path="/home" component={Home} />
         <Route exact path="/errorUnAuthorized" component={ErrorUnAuthorized} />
 

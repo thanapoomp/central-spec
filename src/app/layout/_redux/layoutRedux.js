@@ -3,18 +3,18 @@ import storage from "redux-persist/lib/storage";
 
 export const actionTypes = {
   UPDATE_DRAWER_OPEN: "[UPDATE_DRAWER_OPEN] Action",
-  UPDATE_DARK_MODE: '[UPDATE_DARK_MODE] Action',
-  SHOW_POPUP_LOGINOUT: '[SHOW_POPUP_LOGINOUT] Action',
-  HIDE_POPUP_LOGINOUT: '[HIDE_POPUP_LOGINOUT] Action',
-  SHOW_POPUP_CHANGEPASSWORD: '[SHOW_POPUP_CHANGEPASSWORD] Action',
-  HIDE_POPUP_CHANGEPASSWORD: '[HIDE_POPUP_CHANGEPASSWORD] Action'
+  UPDATE_DARK_MODE: "[UPDATE_DARK_MODE] Action",
+  SHOW_POPUP_LOGIN: "[SHOW_POPUP_LOGIN] Action",
+  HIDE_POPUP_LOGIN: "[HIDE_POPUP_LOGIN] Action",
+  SHOW_POPUP_CHANGEPASSWORD: "[SHOW_POPUP_CHANGEPASSWORD] Action",
+  HIDE_POPUP_CHANGEPASSWORD: "[HIDE_POPUP_CHANGEPASSWORD] Action",
 };
 
 const initialAuthState = {
   drawerOpen: false,
   darkMode: false,
-  popupLogInOut: true,
-  popupChangePassword: false
+  popupLogIn: false,
+  popupChangePassword: false,
 };
 
 export const reducer = persistReducer(
@@ -24,45 +24,44 @@ export const reducer = persistReducer(
       case actionTypes.UPDATE_DRAWER_OPEN: {
         return {
           ...state,
-          drawerOpen:action.payload,
+          drawerOpen: action.payload,
         };
       }
 
       case actionTypes.UPDATE_DARK_MODE: {
         return {
           ...state,
-          darkMode:action.payload,
+          darkMode: action.payload,
         };
       }
 
-      case actionTypes.SHOW_POPUP_LOGINOUT: {
+      case actionTypes.SHOW_POPUP_LOGIN: {
         return {
           ...state,
-          popupLogInOut:true,
+          popupLogIn: true,
         };
       }
 
-      case actionTypes.HIDE_POPUP_LOGINOUT: {
+      case actionTypes.HIDE_POPUP_LOGIN: {
         return {
           ...state,
-          popupLogInOut:false,
+          popupLogIn: false,
         };
       }
 
       case actionTypes.SHOW_POPUP_CHANGEPASSWORD: {
         return {
           ...state,
-          popupChangePassword:true,
+          popupChangePassword: true,
         };
       }
 
       case actionTypes.HIDE_POPUP_CHANGEPASSWORD: {
         return {
           ...state,
-          popupChangePassword:false,
+          popupChangePassword: false,
         };
       }
-
 
       default:
         return state;
@@ -71,11 +70,20 @@ export const reducer = persistReducer(
 );
 
 export const actions = {
-    updateDrawerOpen: (payload) => ({ type: actionTypes.UPDATE_DRAWER_OPEN,payload }),
-    updateDarkMode: (payload) => ({ type: actionTypes.UPDATE_DARK_MODE,payload }),
-    showPopupLogInOut: (payload) => ({ type: actionTypes.SHOW_POPUP_LOGINOUT }),
-    hidePopupLogInOut: (payload) => ({ type: actionTypes.HIDE_POPUP_LOGINOUT }),
-    showPopupChangePassword: (payload) => ({ type: actionTypes.SHOW_POPUP_CHANGEPASSWORD }),
-    hidePopupChangePassword: (payload) => ({ type: actionTypes.HIDE_POPUP_CHANGEPASSWORD }),
+  updateDrawerOpen: (payload) => ({
+    type: actionTypes.UPDATE_DRAWER_OPEN,
+    payload,
+  }),
+  updateDarkMode: (payload) => ({
+    type: actionTypes.UPDATE_DARK_MODE,
+    payload,
+  }),
+  showPopupLogIn: (payload) => ({ type: actionTypes.SHOW_POPUP_LOGIN }),
+  hidePopupLogIn: (payload) => ({ type: actionTypes.HIDE_POPUP_LOGIN }),
+  showPopupChangePassword: (payload) => ({
+    type: actionTypes.SHOW_POPUP_CHANGEPASSWORD,
+  }),
+  hidePopupChangePassword: (payload) => ({
+    type: actionTypes.HIDE_POPUP_CHANGEPASSWORD,
+  }),
 };
-

@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 export default function TitleAppBar() {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const [auth] = React.useState(true);
 
   return (
     <div className={classes.root}>
@@ -42,11 +41,10 @@ export default function TitleAppBar() {
           <Typography variant="body1" className={classes.title}>
             {CONST.APP_INFO.name}
           </Typography>
-          {auth && (
-            <React.Fragment>
-              <UserMenu />
-            </React.Fragment>
-          )}
+
+          <React.Fragment>
+            <UserMenu />
+          </React.Fragment>
         </Toolbar>
       </AppBar>
     </div>

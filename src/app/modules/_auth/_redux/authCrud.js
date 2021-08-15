@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as CONST from '../../../../Constant'
+import * as CONST from "../../../../Constant";
 import jwt_decode from "jwt-decode";
 
 var dayjs = require("dayjs");
@@ -7,12 +7,12 @@ var dayjs = require("dayjs");
 export const LOGIN_URL = `${CONST.API_URL}/Auth/login`;
 export const REGISTER_URL = `/Auth/register`;
 export const REQUEST_PASSWORD_URL = `api/auth/forgot-password`;
-export const RENEW_TOKEN_URL = `${CONST.API_URL}/Auth/renew`
+export const RENEW_TOKEN_URL = `${CONST.API_URL}/Auth/renew`;
 
 export const ME_URL = `${CONST.API_URL}/Auth/renew`;
 
-export function login(username, password, source) {
-  return axios.post(LOGIN_URL, { username, password, source });
+export function login(username, password) {
+  return axios.post(LOGIN_URL, { username, password });
 }
 
 export function register(email, fullname, username, password) {
@@ -24,7 +24,7 @@ export function requestPassword(email) {
 }
 
 export function getUserByToken(token) {
-  let decoded = jwt_decode(token)['unique_name'];
+  let decoded = jwt_decode(token)["unique_name"];
   return decoded;
 }
 
@@ -34,7 +34,7 @@ export function getExp(token) {
 }
 
 export function renewToken() {
-  return axios.post(RENEW_TOKEN_URL)
+  return axios.post(RENEW_TOKEN_URL);
 }
 
 export function getRoles(token) {
@@ -42,14 +42,14 @@ export function getRoles(token) {
   let result = [];
 
   if (!decoded.role) {
-    return []
+    return [];
   }
 
   //push role ลง array(fix bug role --> "r","o","l","e")
   if (Array.isArray(decoded.role)) {
-    result = decoded.role
+    result = decoded.role;
   } else {
-    result.push(decoded.role)
+    result.push(decoded.role);
   }
 
   return result;
