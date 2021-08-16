@@ -35,6 +35,13 @@ export default function ASideMenuList() {
 
       <MenuItem iconName="home" text="Home" path="/"></MenuItem>
 
+      <MenuItem
+        iconName="star"
+        text="Unit"
+        path="/unit"
+        roles={[ROLES.admin]}
+      ></MenuItem>
+
       <React.Fragment>
         {/* Demo */}
         {/* <ParentsMenu iconName="star" text="Demo">

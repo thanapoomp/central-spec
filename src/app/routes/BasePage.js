@@ -37,6 +37,7 @@ import TabBasic from "../modules/_demo/pages/TabBasic";
 import ReduxDemo from "../modules/_demo/pages/ReduxDemo";
 import Product from "../modules/_crudDemo/pages/Product";
 import TokenHandler from "../modules/_auth/components/TokenHandler";
+import UnitManage from "../modules/unit/pages/UnitManage";
 
 export default function BasePage(props) {
   return (
@@ -237,6 +238,8 @@ export default function BasePage(props) {
           title="Product CRUD Demo"
         />
         {/* End Demo part สามารถ comment ได้ */}
+
+        <ContentRoute exact path="/unit" component={UnitManage} title="Units" />
 
         {/* nothing match - redirect to error */}
         <Redirect to="/error404" />
