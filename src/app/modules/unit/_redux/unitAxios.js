@@ -8,6 +8,10 @@ export const getUnits = () => {
   return axios.get(UNIT_URL);
 };
 
+export const addUnit = (payload) => {
+  return axios.post(`${UNIT_URL}`, payload);
+};
+
 // export const addEmployee = (payload) => {
 //   return axios.post(`${EMPLOYEE_URL}/add`, payload);
 // };

@@ -1,12 +1,12 @@
 /* eslint-disable no-restricted-imports */
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import { red } from "@material-ui/core/colors";
 
-const MySwal = withReactContent(Swal);
-
 export const swalInfo = (title, text) => {
-  return MySwal.fire(title, text);
+  return Swal.fire({
+    title: title,
+    text: text,
+  });
 };
 
 export const swalConfirm = (title, text) => {
@@ -32,11 +32,9 @@ export const swalError = (title, text) => {
 };
 
 export const swalSuccess = (title, text) => {
-    return Swal.fire({
-      icon: "success",
-      title,
-      text,
-    });
-  };
-
-export default MySwal;
+  return Swal.fire({
+    icon: "success",
+    title,
+    text,
+  });
+};

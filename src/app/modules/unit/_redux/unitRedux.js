@@ -3,12 +3,14 @@ export const actionTypes = {
   SHOW_ADD_UNIT_POPUP: "[SHOW ADD UNIT] Action",
   SHOW_EDIT_UNIT_POPUP: "[SHOW EDIT UNIT POPUP] Action",
   HIDE_POPUP: "[HIDE_POPUP] Action",
+  FORCE_RELOAD: "[FORCE_RELOAD] Action",
 };
 
 // state ค่าที่ถูกเก็บไว้
 const initialState = {
   showAddEdit: false,
   selectedUnitId: null,
+  needReload: false,
 };
 
 // reducer แต่ละ Action จะไป update State อย่างไร
@@ -30,6 +32,10 @@ export const reducer = (state = initialState, action) => {
       return { ...state, showAddEdit: null, selectedUnitId: null };
     }
 
+    case actionTypes.FORCE_RELOAD: {
+      return { ...state, needReload: true };
+    }
+
     default:
       return state;
   }
@@ -43,4 +49,5 @@ export const actions = {
     payload,
   }),
   hidePopup: () => ({ type: actionTypes.HIDE_POPUP }),
+  forceReload: () => ({ type: actionTypes.FORCE_RELOAD }),
 };

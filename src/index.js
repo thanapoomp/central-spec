@@ -9,9 +9,9 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import * as _redux from "./redux";
 import store, { persistor } from "./redux/store";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
 
 // import "./sass/style.react.rtl.css"; // RTL version
 /**
